@@ -10,31 +10,20 @@ import java.util.HashMap;
 @RestController
 @RequestMapping("/api/v1")
 public class ventasController {
-    HashMap<Integer, String> ventas = new HashMap<>();
-    HashMap<Integer,String> ventasRealizadas = new HashMap<>();
+    private HashMap<Integer, String> ventas = new HashMap<>();
 
     @GetMapping("/ventas")
     public HashMap mostrarVentas(){
-
-        int contador = 1;
-        for (int i = 0; i < 5000; i++) {
-            ventas.put(contador, "Venta " + contador);
-            contador++;
-        }
 
         return ventas;
     }
 
     @PostMapping("/ventas")
     public HashMap crearVenta(){
+        int contador = ventas.size() + 1;
+        ventas.put(contador,"Venta realizada a traves del post, esta venta es la numero " + contador);
 
-        int contador = 1;
-        for (int i = 0; i < 5000; i++) {
-            ventasRealizadas.put(1,"Venta " + contador + "realizada por POST!");
-            contador++;
-        }
-
-        return ventasRealizadas;
+        return ventas;
     }
 
 
