@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1")
 public class ventasController {
     HashMap<Integer, String> ventas = new HashMap<>();
     HashMap<Integer,String> ventasRealizadas = new HashMap<>();
@@ -36,5 +36,6 @@ public class ventasController {
 
         return ventasRealizadas;
     }
+
 
 }
